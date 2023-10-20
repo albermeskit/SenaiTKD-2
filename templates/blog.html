@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block titulo %}Blog{% endblock %}
+
+{% block titulo_body %}Arq - Blog{% endblock %}
+
+{% block conteudo %}
+
+{% load static %}
+
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9">
+                <div class="pxp-blog-hero">
+                    <h1 class="text-center">Notícias</h1>
+                    <p class="pxp-hero-subtitle pxp-text-light text-center">
+                        No último domingo, a II Competição Interna da WMTKD proporcionou aos nossos alunos a oportunidade de colocar em prática suas habilidades e conhecimentos adquiridos durante os treinos dentro da nossa Associação.
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <div class="row">
+                        {% for noticia in noticias %}
+                        <div class="col-md-6 col-xxl-4">
+                            <div class="card border pxp-card-shadow">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ noticia.titulo_noticia }}</h5>
+                                    <a href="{% url 'blog_detalhes' noticia.id %}" class="btn btn-primary">Saiba mais <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

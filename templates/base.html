@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url('faixa preta.jpg');
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# 1 - ADICIONADO ESTILO#}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{% block titulo %}{% endblock %}</title>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    {# Carregando... #}
+    <div class="pxp-preloader"><span>Carregando...</span></div>
+
+{#   INICIO NAVBAR #}
+    <header class="pxp-header fixed-top pxp-no-bg pxp-bigger">
+            <div class="pxp-container">
+                <div class="pxp-header-container">
+                    <div class="pxp-logo-nav-container">
+                        <div class="pxp-logo">
+                            <a href="{% url 'pagina_home' %}" class="pxp-animate"><span style="color: var(--pxpMainColor)">j</span>obster</a>
+                        </div>
+                        <div class="pxp-nav-trigger navbar d-xl-none flex-fill">
+                            <a role="button" data-bs-toggle="offcanvas" data-bs-target="#pxpMobileNav" aria-controls="pxpMobileNav">
+                                <div class="pxp-line-1"></div>
+                                <div class="pxp-line-2"></div>
+                                <div class="pxp-line-3"></div>
+                            </a>
+                            <div class="offcanvas offcanvas-start pxp-nav-mobile-container" tabindex="-1" id="pxpMobileNav">
+                                <div class="offcanvas-header">
+                                    <div class="pxp-logo">
+                                        <a href="{% url 'pagina_home' %}" class="pxp-animate"><span style="color: var(--pxpMainColor)">j</span>obster</a>
+                                    </div>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <nav class="pxp-nav-mobile">
+                                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                                            <li class="nav-item dropdown">
+                                                <a role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Home</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Find Jobs</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="pxp-nav dropdown-hover-all d-none d-xl-block">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'pagina_home' %}">Home</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'pagina_blog' %}">Blog</a>
+                                 
+                                    
+                                <li>
+                                    <a href="{% url 'pagina_jobs' %}">História</a>
+
+                                    
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <nav class="pxp-user-nav pxp-on-light gap-3">
+                        <a href="#" class="btn rounded-pill pxp-nav-btn">Inscreva-se</a>
+                        {% if user.is_authenticated %}
+                        <div class="dropdown pxp-user-nav-dropdown">
+                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                <div class="pxp-user-nav-avatar pxp-cover" style="background-image: url({% static 'images/ph-small.jpg' %});"></div>
+                                <div class="pxp-user-nav-name d-none d-md-block">{{ user.username }}</div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{% url 'sair' %}">Logout</a></li>
+                            </ul>
+                        </div>
+                        {% else %}
+                            <a href="{% url 'entrar' %}" class="btn rounded-pill pxp-nav-btn">Login</a>
+                        {% endif %}
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+{#    FIM NAVBAR   #}
+
+
+
+{#    <div class="header">#}
+{#        <div class="nav-links">#}
+{#            <a href="{% url 'pagina_home' %}">Home</a>#}
+{#            <a href="{% url 'pagina_blog' %}">Blog</a>#}
+{#            <a href="{% url 'pagina_jobs' %}">Jobs</a>#}
+{#        </div>#}
+{##}
+{#        {% if user.is_authenticated %}#}
+{#            <p>Olá, {{ user.username }}!</p>#}
+{#            <a href="{% url 'sair' %}">Logout</a>#}
+{#        {% else %}#}
+{#            <a href="{% url 'entrar' %}">Login</a>#}
+{#        {% endif %}#}
+{#    </div>#}
+
+    {% block conteudo %}{% endblock %}
+
+
+{#    INICIO FOOTER #}
+            <footer class="pxp-main-footer mt-100">
+            <div class="pxp-main-footer-bottom" style="background-color: var(--pxpSecondaryColor);">
+                <div class="pxp-container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-auto">
+                            <div class="pxp-footer-copyright pxp-text-light">© WMTKD.WeslleyMagnodeTaekwondo.</div>
+                        </div>
+                        <div class="col-lg-auto">
+                            <div class="pxp-footer-social mt-3 mt-lg-0">
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade pxp-user-modal" id="pxp-signin-modal" aria-hidden="true" aria-labelledby="signinModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pxp-user-modal-fig text-center">
+                            <img src="https://th.bing.com/th/id/R.989fad1085ede3915b561a59e583399f?rik=%2fHUKQn31I%2b1RLA&riu=http%3a%2f%2fst2.depositphotos.com%2f1671550%2f9343%2fv%2f950%2fdepositphotos_93435410-stock-illustration-create-taekwondo-text-graphic-with.jpg&ehk=iLva%2fIFRUWjo7%2b0FRO5JNYRGrgEtmkFksNK8Tw7ZDLU%3d&risl=&pid=ImgRaw&r=0" alt="Sign in">
+                        </div>
+                        <h5 class="modal-title text-center mt-4" id="signinModal">Welcome back!</h5>
+                        <form class="mt-4">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="pxp-signin-email" placeholder="Email address">
+                                <label for="pxp-signin-email">Email address</label>
+                                <span class="fa fa-envelope-o"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="pxp-signin-password" placeholder="Password">
+                                <label for="pxp-signin-password">Password</label>
+                                <span class="fa fa-lock"></span>
+                            </div>
+                            <a href="#" class="btn rounded-pill pxp-modal-cta">Continue</a>
+                            <div class="mt-4 text-center pxp-modal-small">
+                                <a href="#" class="pxp-modal-link">Forgot password</a>
+                            </div>
+                            <div class="mt-4 text-center pxp-modal-small">
+                                New to Jobster? <a role="button" class="" data-bs-target="#pxp-signup-modal" data-bs-toggle="modal" data-bs-dismiss="modal">Create an account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade pxp-user-modal" id="pxp-signup-modal" aria-hidden="true" aria-labelledby="signupModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pxp-user-modal-fig text-center">
+                            <img src="images/signup-fig.png" alt="Sign up">
+                        </div>
+                        <h5 class="modal-title text-center mt-4" id="signupModal">Create an account</h5>
+                        <form class="mt-4">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="pxp-signup-email" placeholder="Email address">
+                                <label for="pxp-signup-email">Email address</label>
+                                <span class="fa fa-envelope-o"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="pxp-signup-password" placeholder="Create password">
+                                <label for="pxp-signup-password">Create password</label>
+                                <span class="fa fa-lock"></span>
+                            </div>
+                            <a href="#" class="btn rounded-pill pxp-modal-cta">Continue</a>
+                            <div class="mt-4 text-center pxp-modal-small">
+                                Already have an account? <a role="button" class="" data-bs-target="#pxp-signin-modal" data-bs-toggle="modal">Sign in</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{#    FIM FOOTER   #}
+
+    {# 2 - ADICIONADO JAVASCRIPT #}
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

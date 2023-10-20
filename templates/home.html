@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block titulo %}Home Page{% endblock %}
+
+{% block titulo_body %}
+    {{ configuracao.slogan }}
+{% endblock %}
+
+
+{% block conteudo %}
+{#    <ul>#}
+{#        <li>{{ configuracao.nome_empresa }}</li>#}
+{#        <li>{{ configuracao.telefone }}</li>#}
+{#        <li>{{ configuracao.email }}</li>#}
+{#    </ul>#}
+
+    <section>
+            <div class="pxp-container">
+                <div class="pxp-single-company-container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9">
+                            <div class="pxp-single-company-hero pxp-cover pxp-boxed" style="background-image: url('{{configuracao.blog}}');">
+                                <div class="pxp-hero-opacity"></div>
+                                <div class="pxp-single-company-hero-caption">
+                                    <div class="pxp-single-company-hero-content d-block text-center">
+                                        <div class="pxp-single-company-hero-logo d-inline-block" style="background-image: url('{{configuracao.blog}}');"></div>
+                                        <div class="pxp-single-company-hero-title ms-0 mt-3">
+                                            <h1>{{ configuracao.nome_empresa }}</h1>
+                                            <div class="pxp-single-company-hero-location"><span class="fa fa-globe"></span>Teresina, Piauí</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4 mt-lg-5">
+                                <div class="col-lg-7 col-xxl-8">
+                                    <div class="pxp-single-company-content">
+                                        <h2>Sobre {{ configuracao.nome_empresa }}</h2>
+                                    </h4>
+                                    A ação de criar essa associação surgiu da necessidade de haver mais locais e
+                                            opções de treino para as pessoas, sobretudo, numa época em que as pessoas
+                                            devem prezar mais pela saúde física e mental, que na minha opinião (embora
+                                            seja suspeito para falar isso), o Taekwondo oferece com maestria. E quando eu
+                                            pensei o que iria melhor nossa arte marcial, a primeira coisa que meio veio a
+                                            cabeça foi conhecimento, porque por mais que você seja bom tecnicamente,
+                                            fisicamente, mentalmente, não chegamos a lugar nenhum sem conhecimento.
+                                            A ideia principal que eu Prof. Weslley e o Prof. Eliomar enquanto fundadores,
+                                            temos com essa apostila e com esse projeto é ensinar, mostrar e proporcionar
+                                            aquilo que não tivemos em nossa graduação, ou que não tivemos um acesso tão
+                                            cedo como gostaríamos de ter tido. Nosso projeto é jovem, mas estamos
+                                            sempre buscando mais aprimoramentos, novas informações, novos jeitos de
+                                            ensinar, da melhor forma possível para que todos possam aprender de modo
+                                            fácil.Explorar todas as partes da arte marcial é de fato excencial para a formação de
+                                            um taekwondista completo. Meu professor sempre disse que por mais que nós
+                                            quiséssemos aprender tudo, no final sempre teríamos que escolher um caminho,
+                                            aquilo para o qual temos mais afinidade, e hoje eu sei como isso é verdade;
+                                            tendo isso em mente, queremos dar todas as opções para quem entrar para esse
+                                            mundo do taekwondo, assim, não importa o que você escolha, vai estar
+                                            preparado para ter sucesso em tudo. </h4>
+                                        
+                                <div class="col-lg-5 col-xxl-4">
+                                    <div class="pxp-single-company-side-panel mt-5 mt-lg-0">
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Setor</div>
+                                            <div class="pxp-single-company-side-info-data">Esportes</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">localizado</div>
+                                            <div class="pxp-single-company-side-info-data">Parque da Cidadania</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Fundado em</div>
+                                            <div class="pxp-single-company-side-info-data">2021</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Contato</div>
+                                            <div class="pxp-single-company-side-info-data">(86)98111-4715</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Email</div>
+                                            <div class="pxp-single-company-side-info-data">weslleympt@gmail.com</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Endereço</div>
+                                            <div class="pxp-single-company-side-info-data">Av.Frei Serafim/Centro-Norte</div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="pxp-single-company-side-info-label pxp-text-light">Site</div>
+                                            <div class="pxp-single-company-side-info-data"><a href="#">www.wmtkd.com.br</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+
+
+
+
+
+
+
