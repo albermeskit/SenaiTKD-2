@@ -44,7 +44,10 @@ APPS_DJANGO = [
 APPS_PROPRIETARIO = [
     'apps.core',
     'apps.jobs',
-    'apps.blog'
+    'apps.blog',
+    'apps.atletas',
+    'apps.fight',
+    'apps.dados',
 ]
 
 APP_TERCEIROS = [
