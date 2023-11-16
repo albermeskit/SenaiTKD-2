@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% load static %}
 
 {% block titulo %}Home Page{% endblock %}
 
@@ -19,7 +19,7 @@
                 <div class="pxp-single-company-container">
                     <div class="row justify-content-center">
                         <div class="col-xl-9">
-                            <div class="pxp-single-company-hero pxp-cover pxp-boxed" style="background-image: url('{{configuracao.blog}}');">
+                            <div class="pxp-single-company-hero pxp-cover pxp-boxed" style="background-image: url({% static '/images/LogoTKD.jpeg' %});">
                                 <div class="pxp-hero-opacity"></div>
                                 <div class="pxp-single-company-hero-caption">
                                     <div class="pxp-single-company-hero-content d-block text-center">
