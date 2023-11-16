@@ -13,3 +13,15 @@ class FightAdmin(admin.ModelAdmin):
     list_display_links=['atleta1',
 'atleta2',
 'local']
+    
+
+
+
+
+
+
+
+
+
+
+    

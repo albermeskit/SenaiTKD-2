@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 class Atleta(models.Model):
     FAIXA_CHOICES = (
         ('Branca', 'Branca'),

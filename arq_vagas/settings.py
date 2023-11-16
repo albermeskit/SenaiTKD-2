@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$(dgvj%m5^a^)rey6#g7ks=dx240viybdxl*hcsh$a2x#b8n^s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -145,3 +145,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+
+
+
+
+
+
+
+
+
+
